@@ -1,0 +1,10 @@
+{
+    entry = {
+        bundle = ICQRebornPrefs;
+        cell = PSLinkCell;
+        detail = ICQRebornPrefsListController;
+        icon = "ICQReborn.png";
+        isController = 1;
+        label = "ICQ Reborn";
+    };
+}

@@ -1,0 +1,11 @@
+{
+    CFBundleDevelopmentRegion = English;
+    CFBundleExecutable = ICQRebornPrefs;
+    CFBundleIdentifier = "com.icqreborn.prefs";
+    CFBundleInfoDictionaryVersion = "6.0";
+    CFBundleName = ICQRebornPrefs;
+    CFBundlePackageType = BNDL;
+    CFBundleVersion = "1.0.0";
+    CFBundleShortVersionString = "1.0.0";
+    NSPrincipalClass = ICQRebornPrefsListController;
+}

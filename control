@@ -1,0 +1,11 @@
+Package: com.icqreborn.tweak
+Name: ICQ Reborn
+Version: 1.0.0
+Architecture: iphoneos-arm
+Description: Redirects the 2010 AIM-based ICQ clients (ICQ Premium / ICQ) to a custom server set in Settings, so they can be used again.
+Homepage: https://github.com/LR-Vensuki/ICQReborn
+Maintainer: ICQ Reborn
+Author: ICQ Reborn
+Section: Tweaks
+Icon: file:///Library/PreferenceLoader/Preferences/ICQReborn@2x.png
+Depends: mobilesubstrate, preferenceloader

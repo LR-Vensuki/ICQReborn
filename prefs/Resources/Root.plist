@@ -1,0 +1,182 @@
+{
+    title = "ICQ Reborn";
+    items = (
+        {
+            cell = PSGroupCell;
+            label = "Язык / Language";
+        },
+        {
+            cell = PSSegmentCell;
+            key = MenuLang;
+            default = ru;
+            defaults = "com.icqreborn.tweak";
+            PostNotification = "com.icqreborn.tweak/menuChanged";
+            validValues = ( ru, en );
+            validTitles = ( "Русский", "English" );
+        },
+        {
+            cell = PSGroupCell;
+            label = "Подключение";
+            footerText = "Адрес сервера, куда твик перенаправляет трафик клиента. В режиме OSCAR это адрес моста.";
+        },
+        {
+            cell = PSSwitchCell;
+            label = "Включено";
+            key = Enabled;
+            default = 0;
+            defaults = "com.icqreborn.tweak";
+            PostNotification = "com.icqreborn.tweak/prefsChanged";
+        },
+        {
+            cell = PSEditTextCell;
+            label = "Хост";
+            key = ServerHost;
+            defaults = "com.icqreborn.tweak";
+            PostNotification = "com.icqreborn.tweak/prefsChanged";
+            placeholder = "example.com или 10.0.0.5";
+            autoCapitalizationType = 0;
+            autoCorrectionType = 1;
+            keyboardType = 3;
+        },
+        {
+            cell = PSEditTextCell;
+            label = "Порт";
+            key = ServerPort;
+            defaults = "com.icqreborn.tweak";
+            PostNotification = "com.icqreborn.tweak/prefsChanged";
+            placeholder = "необязательно";
+            autoCapitalizationType = 0;
+            autoCorrectionType = 1;
+            keyboardType = 4;
+        },
+        {
+            cell = PSSwitchCell;
+            label = "Использовать HTTPS";
+            key = UseHTTPS;
+            default = 0;
+            defaults = "com.icqreborn.tweak";
+            PostNotification = "com.icqreborn.tweak/prefsChanged";
+        },
+        {
+            cell = PSGroupCell;
+            label = "Протокол сервера";
+            footerText = "WIM — сервер уже говорит по WIM (трафик идёт напрямую). OSCAR — сервер по протоколу OSCAR, перевод делает мост.";
+        },
+        {
+            cell = PSSegmentCell;
+            key = ServerKind;
+            default = wim;
+            defaults = "com.icqreborn.tweak";
+            PostNotification = "com.icqreborn.tweak/menuChanged";
+            validValues = ( wim, oscar );
+            validTitles = ( WIM, OSCAR );
+        },
+        {
+            cell = PSGroupCell;
+            label = "Расположение моста";
+            footerText = "На сервере — перевод WIM<->OSCAR на VPS (легко для телефона). На устройстве — внутри твика (в разработке).";
+            rbGroup = oscar;
+        },
+        {
+            cell = PSSegmentCell;
+            key = BridgeLocation;
+            default = server;
+            defaults = "com.icqreborn.tweak";
+            PostNotification = "com.icqreborn.tweak/menuChanged";
+            validValues = ( server, device );
+            validTitles = ( "На сервере", "На устройстве" );
+            rbGroup = oscar;
+        },
+        {
+            cell = PSGroupCell;
+            label = "OSCAR-сервер";
+            footerText = "Адрес твоего OSCAR-сервера. Мост запомнит его для этого устройства и будет слать трафик сюда.";
+            rbGroup = oscarsrv;
+        },
+        {
+            cell = PSEditTextCell;
+            label = "OSCAR хост";
+            key = OscarHost;
+            defaults = "com.icqreborn.tweak";
+            PostNotification = "com.icqreborn.tweak/prefsChanged";
+            placeholder = "напр. 10.0.0.5";
+            autoCapitalizationType = 0;
+            autoCorrectionType = 1;
+            keyboardType = 3;
+            rbGroup = oscarsrv;
+        },
+        {
+            cell = PSEditTextCell;
+            label = "OSCAR порт";
+            key = OscarPort;
+            default = 5190;
+            defaults = "com.icqreborn.tweak";
+            PostNotification = "com.icqreborn.tweak/prefsChanged";
+            placeholder = "5190";
+            autoCapitalizationType = 0;
+            autoCorrectionType = 1;
+            keyboardType = 4;
+            rbGroup = oscarsrv;
+        },
+        {
+            cell = PSButtonCell;
+            label = "Подключиться и проверить";
+            action = "doConnect:";
+            rbGroup = oscarsrv;
+        },
+        {
+            cell = PSGroupCell;
+            label = "Что перенаправлять";
+            footerText = "По умолчанию — только API-хосты ICQ.";
+        },
+        {
+            cell = PSSwitchCell;
+            label = "Хосты ICQ (*.icq.net / *.icq.com)";
+            key = RedirectICQ;
+            default = 1;
+            defaults = "com.icqreborn.tweak";
+            PostNotification = "com.icqreborn.tweak/prefsChanged";
+        },
+        {
+            cell = PSSwitchCell;
+            label = "Хосты AOL/AIM";
+            key = RedirectAOL;
+            default = 0;
+            defaults = "com.icqreborn.tweak";
+            PostNotification = "com.icqreborn.tweak/prefsChanged";
+        },
+        {
+            cell = PSSwitchCell;
+            label = "Весь HTTP(S)-трафик";
+            key = RedirectAll;
+            default = 0;
+            defaults = "com.icqreborn.tweak";
+            PostNotification = "com.icqreborn.tweak/prefsChanged";
+        },
+        {
+            cell = PSGroupCell;
+            label = "TLS";
+            footerText = "Принимать самоподписанный сертификат вашего сервера (только при HTTPS).";
+        },
+        {
+            cell = PSSwitchCell;
+            label = "Принимать любой сертификат";
+            key = AcceptAnyCert;
+            default = 1;
+            defaults = "com.icqreborn.tweak";
+            PostNotification = "com.icqreborn.tweak/prefsChanged";
+        },
+        {
+            cell = PSGroupCell;
+            label = "Отладка";
+        },
+        {
+            cell = PSSwitchCell;
+            label = "Логировать перенаправления";
+            key = LogTraffic;
+            default = 0;
+            defaults = "com.icqreborn.tweak";
+            PostNotification = "com.icqreborn.tweak/prefsChanged";
+        }
+    );
+}

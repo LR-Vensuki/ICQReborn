@@ -1,0 +1,8 @@
+{
+    Filter = {
+        Bundles = (
+            "com.icq.icqpaid",
+            "com.icq.icqfree"
+        );
+    };
+}
